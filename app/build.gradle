@@ -5,13 +5,12 @@ ext {
 }
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.bluetooth.communicatorexample"
         minSdkVersion 23
-        targetSdkVersion 28
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
