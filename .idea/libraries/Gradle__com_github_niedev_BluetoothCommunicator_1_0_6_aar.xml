@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.niedev:BluetoothCommunicator:1.0.6@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/58faefa70644fd7710323455f23aef38/transformed/jetified-BluetoothCommunicator-1.0.6/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/58faefa70644fd7710323455f23aef38/transformed/jetified-BluetoothCommunicator-1.0.6/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.niedev/BluetoothCommunicator/1.0.6/4b055a9883dca0e6f5c31c47a34a2adfafa10296/BluetoothCommunicator-1.0.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

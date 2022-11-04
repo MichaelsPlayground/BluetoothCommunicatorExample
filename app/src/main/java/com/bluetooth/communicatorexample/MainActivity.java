@@ -19,12 +19,16 @@ package com.bluetooth.communicatorexample;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -53,11 +57,40 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Callback> clientsCallbacks = new ArrayList<>();
     private CoordinatorLayout fragmentContainer;
 
+    /**
+     * This block is for requesting permissions up to Android 12+
+     *
+     */
+
+    private static final int PERMISSIONS_REQUEST_CODE = 191;
+    private static final String[] BLE_PERMISSIONS = new String[]{
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+    };
+
+    @SuppressLint("InlinedApi")
+    private static final String[] ANDROID_12_BLE_PERMISSIONS = new String[]{
+            Manifest.permission.BLUETOOTH_SCAN,
+            Manifest.permission.BLUETOOTH_CONNECT,
+            Manifest.permission.BLUETOOTH_ADVERTISE,
+            Manifest.permission.ACCESS_FINE_LOCATION
+    };
+
+    public static void requestBlePermissions(Activity activity, int requestCode) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
+            ActivityCompat.requestPermissions(activity, ANDROID_12_BLE_PERMISSIONS, requestCode);
+        else
+            ActivityCompat.requestPermissions(activity, BLE_PERMISSIONS, requestCode);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // new
+        requestBlePermissions(this, PERMISSIONS_REQUEST_CODE);
 
         global = (Global) getApplication();
 

@@ -1,5 +1,10 @@
 ### BluetoothCommunicator example
 
+Original code: https://github.com/niedev/BluetoothCommunicatorExample
+
+Note: although I tried to update the app and maanually gave Bluetooth permissions the app does not 
+scan for other devices nor finds already paired ones.
+
 This repository contains an open source sample application of the [BluetoothCommunicator library](https://github.com/niedev/BluetoothCommunicator).<br />
 The library, using Bluetooth Low Energy, allows you to communicate in P2P mode between two or more android devices in a very simple way.<br /><br />
 
